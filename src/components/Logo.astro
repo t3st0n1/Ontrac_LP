@@ -1,19 +1,19 @@
 ---
 import { Image } from "astro:assets";
-import logoImage from "../assets/ontrac-logo.jpeg";
+import logoImage from "../assets/ontrac-logo.png";
 
 interface Props {
-  variant?: "full" | "mark";
+  context?: "header" | "footer";
   class?: string;
 }
 
-const { variant = "full", class: className = "" } = Astro.props;
+const { context = "header", class: className = "" } = Astro.props;
 ---
 
 <Image
   src={logoImage}
   alt="OnTrac"
-  class={`logo-img ${variant === "mark" ? "logo-img--mark" : "logo-img--full"} ${className}`}
+  class={`logo-img logo-img--${context} ${className}`}
   loading="eager"
   decoding="async"
 />
@@ -23,18 +23,20 @@ const { variant = "full", class: className = "" } = Astro.props;
     width: auto;
     object-fit: contain;
     display: block;
+    background: transparent;
   }
-  .logo-img--full {
-    height: 32px;
+
+  .logo-img--header {
+    height: 36px;
   }
   @media (min-width: 1024px) {
-    .logo-img--full {
-      height: 40px;
+    .logo-img--header {
+      height: 48px;
     }
   }
-  .logo-img--mark {
-    height: 32px;
-    aspect-ratio: 1 / 1;
-    object-position: left center;
+
+  .logo-img--footer {
+    height: 40px;
+    opacity: 0.8;
   }
 </style>
