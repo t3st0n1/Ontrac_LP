@@ -1,0 +1,79 @@
+---
+import Logo from "./Logo.astro";
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-[#2A2520] bg-[#0A0A0F]">
+  <div class="container-x py-16">
+    <div class="grid gap-10 lg:grid-cols-12">
+      <div class="lg:col-span-5">
+        <Logo variant="full" />
+        <p class="mt-5 font-display italic text-xl"
+          style="color: var(--color-gold);"
+        >
+          Every Transaction Leaves a Trace.
+        </p>
+        <p class="mt-4 text-sm text-[#8B8575] max-w-sm leading-relaxed">
+          Inteligência forense on-chain construída na Solana, voltada para recuperação de criptoativos.
+        </p>
+      </div>
+
+      <div class="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8 text-sm">
+        <div>
+          <p class="font-mono text-[10px] uppercase tracking-widest text-[#8B8575] mb-4">Produto</p>
+          <ul class="space-y-3">
+            <li><a href="#solucao" class="text-[#E8E1D6] hover:text-[#D4A849] transition-colors">Solução</a></li>
+            <li><a href="#como-funciona" class="text-[#E8E1D6] hover:text-[#D4A849] transition-colors">Como funciona</a></li>
+            <li><a href="#diferencial" class="text-[#E8E1D6] hover:text-[#D4A849] transition-colors">Diferencial</a></li>
+            <li><a href="#pricing" class="text-[#E8E1D6] hover:text-[#D4A849] transition-colors">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="font-mono text-[10px] uppercase tracking-widest text-[#8B8575] mb-4">Recursos</p>
+          <ul class="space-y-3">
+            <li><a href="#para-quem" class="text-[#E8E1D6] hover:text-[#D4A849] transition-colors">Para quem</a></li>
+            <li><a href="#equipe" class="text-[#E8E1D6] hover:text-[#D4A849] transition-colors">Equipe</a></li>
+            <li><a href="#tech" class="text-[#E8E1D6] hover:text-[#D4A849] transition-colors">Tech stack</a></li>
+            <li><a href="mailto:contato@ontrac.io" class="text-[#E8E1D6] hover:text-[#D4A849] transition-colors">Contato</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="font-mono text-[10px] uppercase tracking-widest text-[#8B8575] mb-4">Conecte-se</p>
+          <ul class="space-y-3">
+            <li>
+              <a href="https://github.com/t3st0n1/Ontrac_LP" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[#E8E1D6] hover:text-[#D4A849] transition-colors">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.9 1.2 3.2 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a href="https://x.com/ontrac_io" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[#E8E1D6] hover:text-[#D4A849] transition-colors">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2H21l-6.52 7.45L22 22h-6.804l-5.327-6.96L3.78 22H1l6.97-7.97L1.5 2h6.95l4.82 6.37L18.244 2zm-1.193 18h1.815L7.04 4H5.09l11.96 16z"/></svg>
+                Twitter / X
+              </a>
+            </li>
+            <li>
+              <a href="mailto:contato@ontrac.io" class="inline-flex items-center gap-2 text-[#E8E1D6] hover:text-[#D4A849] transition-colors">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+                Contato
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-14 gold-rule opacity-60"></div>
+
+    <div class="mt-6 flex flex-col-reverse md:flex-row md:items-center md:justify-between gap-4">
+      <p class="text-xs text-[#8B8575] font-mono">
+        © {year} OnTrac. Todos os direitos reservados.
+      </p>
+      <p class="text-xs font-mono uppercase tracking-widest text-[#D4A849]">
+        Projeto apresentado no Solana Frontier Hackathon 2026
+      </p>
+    </div>
+  </div>
+</footer>

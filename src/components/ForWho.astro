@@ -1,0 +1,72 @@
+---
+const personas = [
+  {
+    title: "Vítimas de fraude cripto",
+    desc: "Perdeu criptoativos em rug pull, scam ou hack? Gere a evidência que você precisa para agir.",
+    icon: "user",
+    cta: "Rastrear minha carteira",
+  },
+  {
+    title: "Advogados",
+    desc: "Receba um parecer técnico completo com kit de petição para tutela de urgência, pronto para protocolar.",
+    icon: "briefcase",
+    cta: "Ver kit de petição",
+  },
+  {
+    title: "Forças de segurança",
+    desc: "Relatórios forenses padronizados que aceleram investigações e viabilizam ordens de congelamento.",
+    icon: "shield",
+    cta: "Solicitar acesso institucional",
+  },
+];
+---
+
+<section id="para-quem" class="section bg-[#0A0A0F]">
+  <div class="container-x">
+    <div class="max-w-2xl reveal">
+      <p class="label-eyebrow mb-5"><span>Para Quem</span></p>
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl leading-tight text-balance"
+        style="color: var(--color-gold-light);"
+      >
+        Quem usa o OnTrac.
+      </h2>
+    </div>
+
+    <div class="mt-14 grid gap-6 lg:grid-cols-3">
+      {personas.map((p, i) => (
+        <article class={`card-base card-hover p-8 flex flex-col h-full reveal reveal-delay-${i + 1}`}>
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center border border-[#2A2520] bg-[#0A0A0F] text-[#D4A849]">
+            {p.icon === "user" && (
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            )}
+            {p.icon === "briefcase" && (
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2"/>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+              </svg>
+            )}
+            {p.icon === "shield" && (
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+            )}
+          </div>
+
+          <h3 class="mt-6 font-display text-2xl" style="color: var(--color-gold-light);">{p.title}</h3>
+          <p class="mt-3 text-sm text-[#8B8575] leading-relaxed flex-1">{p.desc}</p>
+
+          <a href="#pricing" class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[#D4A849] hover:text-[#E8E1D6] transition-colors">
+            {p.cta}
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M5 12h14M13 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

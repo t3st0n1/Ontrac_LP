@@ -1,0 +1,76 @@
+---
+import Logo from "./Logo.astro";
+
+const links = [
+  { href: "#problema", label: "Problema" },
+  { href: "#solucao", label: "Solução" },
+  { href: "#como-funciona", label: "Como funciona" },
+  { href: "#diferencial", label: "Diferencial" },
+  { href: "#pricing", label: "Pricing" },
+  { href: "#equipe", label: "Equipe" },
+];
+---
+
+<header
+  data-site-header
+  class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 data-[scrolled=true]:backdrop-blur-md data-[scrolled=true]:bg-[#0A0A0F]/80 data-[scrolled=true]:border-b data-[scrolled=true]:border-[#2A2520]"
+>
+  <div class="container-x flex items-center justify-between py-4">
+    <a href="#top" class="flex items-center" aria-label="OnTrac — início">
+      <Logo variant="full" />
+    </a>
+
+    <nav aria-label="Navegação principal" class="hidden lg:flex items-center gap-8">
+      {links.map((l) => (
+        <a
+          href={l.href}
+          class="text-sm text-[#8B8575] hover:text-[#E8E1D6] transition-colors"
+        >
+          {l.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="hidden lg:flex items-center gap-3">
+      <a href="#cta" class="btn-outline text-sm py-2.5 px-4">Acessar</a>
+      <a href="#pricing" class="btn-primary text-sm py-2.5 px-4">Rastrear agora</a>
+    </div>
+
+    <button
+      type="button"
+      data-menu-btn
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      aria-label="Abrir menu"
+      class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-md border border-[#2A2520] text-[#E8E1D6]"
+    >
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+
+  <div
+    id="mobile-menu"
+    data-menu
+    data-open="false"
+    class="lg:hidden border-t border-[#2A2520] bg-[#0A0A0F] data-[open=false]:hidden"
+  >
+    <nav class="container-x py-6 flex flex-col gap-1">
+      {links.map((l) => (
+        <a
+          href={l.href}
+          class="block py-3 text-base text-[#E8E1D6] border-b border-[#2A2520] last:border-b-0"
+        >
+          {l.label}
+        </a>
+      ))}
+      <div class="flex gap-3 pt-4">
+        <a href="#cta" class="btn-outline flex-1 text-sm">Acessar</a>
+        <a href="#pricing" class="btn-primary flex-1 text-sm">Rastrear</a>
+      </div>
+    </nav>
+  </div>
+</header>

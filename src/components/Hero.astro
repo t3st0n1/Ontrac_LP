@@ -1,0 +1,165 @@
+---
+// Hero section — animated graph, headline, CTAs, hash sample
+---
+
+<section
+  id="top"
+  class="relative isolate overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28"
+  style="background: radial-gradient(ellipse at top, #12121A 0%, #0A0A0F 60%);"
+>
+  <!-- Subtle dot grid background -->
+  <div class="absolute inset-0 bg-dot-grid opacity-50 -z-10" aria-hidden="true"></div>
+
+  <!-- Decorative top gradient line -->
+  <div class="absolute top-0 left-0 right-0 h-px"
+    style="background: linear-gradient(to right, transparent, rgba(182,155,106,0.4), transparent);"
+    aria-hidden="true"
+  ></div>
+
+  <div class="container-x">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <!-- Copy column -->
+      <div class="lg:col-span-7 reveal">
+        <p class="label-eyebrow mb-6">
+          <span>Blockchain Forensic Intelligence</span>
+        </p>
+
+        <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] text-balance"
+          style="color: var(--color-gold-light);"
+        >
+          Every Transaction
+          <span class="block italic mt-2"
+            style="background: linear-gradient(120deg, #D4A849 0%, #B69B6A 60%, #E8E1D6 100%); -webkit-background-clip: text; background-clip: text; color: transparent;"
+          >Leaves a Trace.</span>
+        </h1>
+
+        <p class="mt-8 text-lg lg:text-xl text-[#8B8575] max-w-xl text-pretty leading-relaxed">
+          Inteligência forense on-chain que transforma dados de blockchain
+          em evidências legais para recuperação de criptoativos roubados.
+        </p>
+
+        <div id="cta" class="mt-10 flex flex-wrap items-center gap-4">
+          <a href="#pricing" class="btn-primary">
+            Rastreie Agora
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <path d="M5 12h14M13 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="#solucao" class="btn-outline">Saiba Mais</a>
+        </div>
+
+        <!-- Sample hash demo strip -->
+        <div class="mt-10 flex flex-wrap items-center gap-3 reveal reveal-delay-2">
+          <span class="text-xs uppercase tracking-widest text-[#8B8575] font-mono">Exemplo</span>
+          <span class="hash-pill">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#D4A849]"></span>
+            5xT8...K2pQ
+          </span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B69B6A" stroke-width="1.5">
+            <path d="M5 12h14M13 5l7 7-7 7"/>
+          </svg>
+          <span class="hash-pill text-[#D4A849]">Relatório PDF</span>
+        </div>
+      </div>
+
+      <!-- Animated graph column -->
+      <div class="lg:col-span-5 reveal reveal-delay-1">
+        <div class="relative aspect-square max-w-md mx-auto">
+          <!-- Backdrop frame -->
+          <div class="absolute inset-0 rounded-3xl border border-[#2A2520] bg-[#12121A]/40 backdrop-blur-sm overflow-hidden">
+            <div class="absolute inset-0 bg-dot-grid opacity-40"></div>
+
+            <!-- Corner brackets -->
+            <span class="absolute top-3 left-3 w-4 h-4 border-l border-t border-[#B69B6A]/60"></span>
+            <span class="absolute top-3 right-3 w-4 h-4 border-r border-t border-[#B69B6A]/60"></span>
+            <span class="absolute bottom-3 left-3 w-4 h-4 border-l border-b border-[#B69B6A]/60"></span>
+            <span class="absolute bottom-3 right-3 w-4 h-4 border-r border-b border-[#B69B6A]/60"></span>
+
+            <!-- Status label -->
+            <div class="absolute top-5 left-5 right-5 flex items-center justify-between text-[10px] font-mono tracking-widest text-[#8B8575] uppercase">
+              <span class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#D4A849] anim-graph-pulse"></span>
+                On-chain trace
+              </span>
+              <span>SOLANA</span>
+            </div>
+          </div>
+
+          <!-- SVG graph -->
+          <svg
+            viewBox="0 0 400 400"
+            class="absolute inset-0 w-full h-full"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <defs>
+              <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#B69B6A" stop-opacity="0.6" />
+                <stop offset="100%" stop-color="#D4A849" stop-opacity="0.2" />
+              </linearGradient>
+              <radialGradient id="nodeGlow">
+                <stop offset="0%" stop-color="#D4A849" stop-opacity="0.5" />
+                <stop offset="100%" stop-color="#D4A849" stop-opacity="0" />
+              </radialGradient>
+            </defs>
+
+            <!-- Edges (paths between nodes) -->
+            <g stroke="url(#lineGrad)" stroke-width="1" fill="none" opacity="0.55">
+              <line class="anim-graph-line" x1="200" y1="200" x2="100" y2="120" style="animation-delay: 0.2s;"/>
+              <line class="anim-graph-line" x1="200" y1="200" x2="300" y2="120" style="animation-delay: 0.4s;"/>
+              <line class="anim-graph-line" x1="200" y1="200" x2="120" y2="290" style="animation-delay: 0.6s;"/>
+              <line class="anim-graph-line" x1="200" y1="200" x2="290" y2="290" style="animation-delay: 0.8s;"/>
+              <line class="anim-graph-line" x1="100" y1="120" x2="60" y2="60" style="animation-delay: 1.0s;"/>
+              <line class="anim-graph-line" x1="300" y1="120" x2="350" y2="50" style="animation-delay: 1.1s;"/>
+              <line class="anim-graph-line" x1="300" y1="120" x2="350" y2="200" style="animation-delay: 1.2s;"/>
+              <line class="anim-graph-line" x1="120" y1="290" x2="60" y2="340" style="animation-delay: 1.3s;"/>
+              <line class="anim-graph-line" x1="290" y1="290" x2="340" y2="350" style="animation-delay: 1.4s;"/>
+              <line class="anim-graph-line" x1="290" y1="290" x2="200" y2="350" style="animation-delay: 1.5s;"/>
+            </g>
+
+            <!-- Active flowing edge -->
+            <line x1="200" y1="200" x2="300" y2="120"
+              stroke="#D4A849" stroke-width="1.2" opacity="0.8"
+              class="anim-graph-flow"
+            />
+
+            <!-- Node halos -->
+            <circle cx="200" cy="200" r="22" fill="url(#nodeGlow)"/>
+            <circle cx="300" cy="120" r="14" fill="url(#nodeGlow)"/>
+
+            <!-- Nodes -->
+            <g fill="#B69B6A">
+              <circle cx="60" cy="60" r="3" class="anim-graph-pulse" style="animation-delay: 0s;"/>
+              <circle cx="100" cy="120" r="4"/>
+              <circle cx="350" cy="50" r="3" class="anim-graph-pulse" style="animation-delay: 0.5s;"/>
+              <circle cx="300" cy="120" r="5" fill="#D4A849"/>
+              <circle cx="350" cy="200" r="3"/>
+              <circle cx="120" cy="290" r="4"/>
+              <circle cx="60" cy="340" r="3" class="anim-graph-pulse" style="animation-delay: 1s;"/>
+              <circle cx="290" cy="290" r="4"/>
+              <circle cx="340" cy="350" r="3" class="anim-graph-pulse" style="animation-delay: 1.5s;"/>
+              <circle cx="200" cy="350" r="3"/>
+            </g>
+
+            <!-- Center node -->
+            <circle cx="200" cy="200" r="8" fill="#D4A849" stroke="#E8E1D6" stroke-width="0.5"/>
+            <circle cx="200" cy="200" r="14" fill="none" stroke="#D4A849" stroke-width="1" opacity="0.5" class="anim-graph-pulse"/>
+
+            <!-- Node labels -->
+            <g font-family="'JetBrains Mono', monospace" font-size="8" fill="#8B8575">
+              <text x="220" y="204">origin</text>
+              <text x="312" y="116">exchange</text>
+              <text x="60" y="350" text-anchor="start">defi</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom fade -->
+  <div class="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+    style="background: linear-gradient(to bottom, transparent, #0A0A0F);"
+    aria-hidden="true"
+  ></div>
+</section>

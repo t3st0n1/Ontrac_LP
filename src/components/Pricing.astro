@@ -1,0 +1,144 @@
+---
+const tiers = [
+  {
+    name: "Scan Básico",
+    price: "US$ 50",
+    suffix: "/relatório",
+    desc: "Triagem rápida para confirmar suspeita.",
+    features: [
+      "Risk score da carteira",
+      "Sumário executivo (2 páginas)",
+      "Identificação de exchanges atingidas",
+      "Entrega imediata",
+    ],
+    cta: "Começar",
+    featured: false,
+  },
+  {
+    name: "Relatório Forense",
+    price: "US$ 150",
+    suffix: "/relatório",
+    desc: "Pacote completo pronto para protocolar.",
+    features: [
+      "Grafo de fluxo completo",
+      "PDF com parecer técnico assinado",
+      "Kit de petição (minuta + checklist)",
+      "Lista de exchanges com canais de contato",
+      "Selo de integridade ICP-Brasil",
+    ],
+    cta: "Recomendado",
+    featured: true,
+  },
+  {
+    name: "Assinatura Pro",
+    price: "US$ 300",
+    suffix: "/mês",
+    desc: "Para escritórios e equipes investigativas.",
+    features: [
+      "Relatórios ilimitados",
+      "Branding white-label",
+      "Acesso à API REST",
+      "SLA prioritário",
+      "Suporte dedicado",
+    ],
+    cta: "Falar com vendas",
+    featured: false,
+  },
+];
+
+const compare = [
+  { label: "Chainalysis", price: "US$ 22.000+/ano", note: "Enterprise only" },
+  { label: "Investigador privado", price: "US$ 2.200+/trace", note: "Por hora" },
+  { label: "OnTrac", price: "US$ 50–150/relatório", note: "Self-service", highlight: true },
+];
+---
+
+<section id="pricing" class="section bg-[#12121A]">
+  <div class="container-x">
+    <div class="max-w-2xl reveal">
+      <p class="label-eyebrow mb-5"><span>Pricing</span></p>
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl leading-tight text-balance"
+        style="color: var(--color-gold-light);"
+      >
+        Acessível para quem precisa.
+      </h2>
+      <p class="mt-5 text-base text-[#8B8575] leading-relaxed">
+        Sem assinaturas escondidas. Pague só pelo que rastrear.
+      </p>
+    </div>
+
+    <!-- Tiers -->
+    <div class="mt-14 grid gap-6 lg:grid-cols-3">
+      {tiers.map((t, i) => (
+        <article class={`relative card-base p-8 flex flex-col h-full reveal reveal-delay-${i + 1} ${t.featured ? "border-[#B69B6A]/60" : ""}`}
+          style={t.featured ? "box-shadow: 0 0 0 1px rgba(182,155,106,0.2), 0 12px 40px -12px rgba(212,168,73,0.25);" : ""}
+        >
+          {t.featured && (
+            <span class="absolute -top-3 left-8 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono uppercase tracking-widest"
+              style="background: linear-gradient(180deg, #D4A849 0%, #B69B6A 100%); color: #0A0A0F;"
+            >
+              <span class="w-1 h-1 rounded-full bg-[#0A0A0F]"></span>
+              Mais escolhido
+            </span>
+          )}
+
+          <div class="flex items-baseline justify-between">
+            <h3 class="font-display text-2xl" style="color: var(--color-gold-light);">{t.name}</h3>
+          </div>
+          <p class="mt-2 text-sm text-[#8B8575]">{t.desc}</p>
+
+          <div class="mt-6 flex items-baseline gap-1">
+            <span class="font-display text-5xl"
+              style={t.featured
+                ? "background: linear-gradient(180deg, #D4A849 0%, #B69B6A 100%); -webkit-background-clip: text; background-clip: text; color: transparent;"
+                : "color: var(--color-gold-light);"
+              }
+            >{t.price}</span>
+            <span class="text-sm text-[#8B8575]">{t.suffix}</span>
+          </div>
+
+          <div class="mt-6 gold-rule opacity-70"></div>
+
+          <ul class="mt-6 space-y-3 flex-1">
+            {t.features.map((f) => (
+              <li class="flex items-start gap-3 text-sm text-[#E8E1D6]/85">
+                <svg class="mt-0.5 shrink-0 text-[#D4A849]" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>{f}</span>
+              </li>
+            ))}
+          </ul>
+
+          <a href="#cta"
+            class={t.featured ? "mt-8 btn-primary w-full" : "mt-8 btn-outline w-full"}
+          >
+            {t.cta}
+          </a>
+        </article>
+      ))}
+    </div>
+
+    <!-- Comparison -->
+    <div class="mt-16 reveal">
+      <p class="label-eyebrow mb-5"><span>Comparação de mercado</span></p>
+      <div class="card-base overflow-hidden">
+        <div class="divide-y divide-[#2A2520]">
+          {compare.map((c) => (
+            <div class={`grid grid-cols-3 items-center px-6 py-5 ${c.highlight ? "bg-[#0A0A0F]" : ""}`}>
+              <p class={`text-sm font-medium ${c.highlight ? "text-[#D4A849]" : "text-[#E8E1D6]"}`}>
+                {c.label}
+              </p>
+              <p class={`text-sm font-mono ${c.highlight ? "text-[#E8E1D6]" : "text-[#8B8575]"}`}>
+                {c.price}
+              </p>
+              <p class="text-xs text-[#8B8575] text-right uppercase tracking-widest font-mono">
+                {c.note}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

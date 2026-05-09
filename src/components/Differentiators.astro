@@ -1,0 +1,110 @@
+---
+const features = [
+  {
+    title: "Solana-native",
+    desc: "Construído especificamente para a Solana, com integração nativa via Helius API.",
+    icon: "solana",
+  },
+  {
+    title: "Relatório com valor legal",
+    desc: "Parecer técnico assinado por perito, conforme CPC Art. 466 §1º e a decisão do STJ sobre IA (HC 1.059.475/SP).",
+    icon: "scale",
+  },
+  {
+    title: "60 segundos",
+    desc: "Da hash ao relatório forense completo em menos de um minuto.",
+    icon: "timer",
+  },
+  {
+    title: "10x mais barato",
+    desc: "De US$ 2.200 por trace para US$ 50–150 por relatório.",
+    icon: "trend",
+  },
+  {
+    title: "Kit de petição integrado",
+    desc: "Minuta jurídica, lista de exchanges com canais de contato e checklist de anexos para o advogado.",
+    icon: "kit",
+  },
+  {
+    title: "Grafo interativo",
+    desc: "Visualização de fluxo de fundos com Cytoscape.js, identificação automática de exchanges e clustering.",
+    icon: "network",
+  },
+];
+---
+
+<section id="diferencial" class="section bg-[#12121A]">
+  <div class="container-x">
+    <div class="flex items-end justify-between flex-wrap gap-6 reveal">
+      <div class="max-w-2xl">
+        <p class="label-eyebrow mb-5"><span>Diferencial</span></p>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl leading-tight text-balance"
+          style="color: var(--color-gold-light);"
+        >
+          Por que o OnTrac?
+        </h2>
+      </div>
+      <p class="text-sm text-[#8B8575] font-mono uppercase tracking-widest">06 vantagens</p>
+    </div>
+
+    <div class="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      {features.map((f, i) => (
+        <article class={`card-base card-hover shine p-7 reveal reveal-delay-${(i % 3) + 1}`}>
+          <div class="flex items-start justify-between mb-5">
+            <div class="w-11 h-11 rounded-lg flex items-center justify-center border border-[#2A2520] bg-[#0A0A0F] text-[#D4A849]">
+              {f.icon === "solana" && (
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 7l3-2h11l-3 2z"/><path d="M5 19l3-2h11l-3 2z"/><path d="M19 13l-3-2H5l3 2z"/>
+                </svg>
+              )}
+              {f.icon === "scale" && (
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="3" x2="12" y2="21"/>
+                  <path d="M5 7h14"/>
+                  <path d="M5 7l-2 6a4 4 0 0 0 8 0z"/>
+                  <path d="M19 7l-2 6a4 4 0 0 0 8 0z"/>
+                </svg>
+              )}
+              {f.icon === "timer" && (
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="13" r="8"/>
+                  <line x1="12" y1="9" x2="12" y2="13"/>
+                  <line x1="12" y1="13" x2="15" y2="15"/>
+                  <line x1="9" y1="2" x2="15" y2="2"/>
+                </svg>
+              )}
+              {f.icon === "trend" && (
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/>
+                  <polyline points="16 17 22 17 22 11"/>
+                </svg>
+              )}
+              {f.icon === "kit" && (
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="7" width="18" height="13" rx="2"/>
+                  <path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/>
+                  <line x1="12" y1="11" x2="12" y2="16"/>
+                  <line x1="9.5" y1="13.5" x2="14.5" y2="13.5"/>
+                </svg>
+              )}
+              {f.icon === "network" && (
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/>
+                  <circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/>
+                  <circle cx="12" cy="12" r="2"/>
+                  <line x1="6.5" y1="7" x2="10.5" y2="11"/>
+                  <line x1="17.5" y1="7" x2="13.5" y2="11"/>
+                  <line x1="6.5" y1="17" x2="10.5" y2="13"/>
+                  <line x1="17.5" y1="17" x2="13.5" y2="13"/>
+                </svg>
+              )}
+            </div>
+            <span class="font-mono text-[10px] uppercase tracking-widest text-[#8B8575]">/ {String(i + 1).padStart(2, "0")}</span>
+          </div>
+          <h3 class="font-display text-xl" style="color: var(--color-gold-light);">{f.title}</h3>
+          <p class="mt-2 text-sm text-[#8B8575] leading-relaxed">{f.desc}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

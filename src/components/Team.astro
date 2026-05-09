@@ -1,0 +1,64 @@
+---
+const team = [
+  {
+    initials: "FN",
+    name: "Founder Name",
+    role: "CEO & Co-founder",
+    bio: "Background em engenharia de software e produto. Liderança técnica do OnTrac.",
+  },
+  {
+    initials: "PE",
+    name: "Perito Especialista",
+    role: "Chief Forensic Officer",
+    bio: "Perito em informática credenciado, atua há 10+ anos com perícia digital judicial.",
+  },
+  {
+    initials: "AC",
+    name: "Advogado(a) Cripto",
+    role: "Head of Legal",
+    bio: "Especialista em direito digital e recuperação de ativos. Atuação em litígios cripto.",
+  },
+  {
+    initials: "DE",
+    name: "Data Engineer",
+    role: "Lead Engineer",
+    bio: "Construindo o pipeline on-chain. Profundo conhecimento da Solana e Helius.",
+  },
+];
+---
+
+<section id="equipe" class="section bg-[#0A0A0F]">
+  <div class="container-x">
+    <div class="max-w-2xl reveal">
+      <p class="label-eyebrow mb-5"><span>Equipe</span></p>
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl leading-tight text-balance"
+        style="color: var(--color-gold-light);"
+      >
+        Quem está por trás.
+      </h2>
+      <p class="mt-5 text-base text-[#8B8575] leading-relaxed">
+        Engenharia, perícia digital e direito reunidos em um único produto.
+      </p>
+    </div>
+
+    <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {team.map((m, i) => (
+        <article class={`card-base card-hover p-6 text-center reveal reveal-delay-${(i % 4) + 1}`}>
+          <div class="mx-auto w-24 h-24 rounded-full flex items-center justify-center relative"
+            style="background: radial-gradient(circle at 30% 30%, #2A2520, #0A0A0F);"
+          >
+            <span class="absolute inset-0 rounded-full border border-[#B69B6A]/30"></span>
+            <span class="font-display text-2xl"
+              style="background: linear-gradient(180deg, #E8E1D6 0%, #B69B6A 100%); -webkit-background-clip: text; background-clip: text; color: transparent;"
+            >
+              {m.initials}
+            </span>
+          </div>
+          <h3 class="mt-5 font-display text-lg" style="color: var(--color-gold-light);">{m.name}</h3>
+          <p class="mt-1 text-xs uppercase tracking-widest font-mono text-[#D4A849]">{m.role}</p>
+          <p class="mt-4 text-sm text-[#8B8575] leading-relaxed">{m.bio}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
